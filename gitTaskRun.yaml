@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  name: run-get-tekton-demo-repo
+spec:
+  serviceAccount: gitlab-read
+  taskRef:
+    name: get-tekton-demo-repo
+  inputs:
+    resources:
+      - name: tekton-demo-repo
+        resourceRef:
+          name: tekton-demo-repo

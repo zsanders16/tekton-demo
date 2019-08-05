@@ -1,0 +1,21 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: tekton-demo-repo
+spec:
+  type: git
+  params:
+    - name: revision
+      value: master
+    - name: url
+      value: https://gitlab.srconnect.io/srconnect/eng-services/tekton/demo.git
+# ---
+# apiVersion: tekton.dev/v1alpha1
+# kind: PipelineResource
+# metadata:
+#   name: image-registry
+# spec:
+#   type: image
+#   params:
+#     - name: url
+#       value: gcr.io/dev-srconnect/tekton/demo:latest

@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: get-tekton-demo-repo
+spec:
+  inputs:
+    resources:
+      - name: tekton-demo-repo
+        type: git
+  steps:
+    - name: ls
+      image: ubuntu
+      command:
+        - ls
